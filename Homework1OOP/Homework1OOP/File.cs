@@ -19,11 +19,11 @@ namespace Homework1OOP
             this.Size = size;
         }
 
-        public string Name { get; set; }
+        public string Name { get; private set; }
 
-        public string Extension { get; set; }
+        public string Extension { get; private set; }
 
-        public string Size { get; set; }
+        public string Size { get; private set; }
 
         public int CompareTo([AllowNull] File other)
         {
@@ -34,7 +34,7 @@ namespace Homework1OOP
             }
             else
             {
-            throw new NotImplementedException();
+                throw new NotImplementedException();
             }
         }
 

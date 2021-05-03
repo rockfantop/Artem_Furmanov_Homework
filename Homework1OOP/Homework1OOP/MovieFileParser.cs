@@ -16,13 +16,13 @@ namespace Homework1OOP
             string[] data = Regex.Split(input, pattern);
 
             MovieFile movieFile = new MovieFile
-            {
-                Name = data[1],
-                Extension = data[2],
-                Size = data[3],
-                Resolution = data[5],
-                Duration = data[6]
-            };
+            (
+                data[1],
+                data[2],
+                data[3],
+                data[5],
+                data[6]
+            );
 
             return movieFile;
         }

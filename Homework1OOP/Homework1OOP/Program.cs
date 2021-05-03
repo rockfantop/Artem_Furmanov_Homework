@@ -14,7 +14,8 @@ Text:data.txt(12B);Another string
 Text:data1.txt(7B);Yet another string
 Movie:logan.2017.mkv(19GB);1920х1080;2h12m
 Image:vasya.png(4MB);123x342
-Image:zemelya(14GB);124x124";
+Image:zemelya(14GB);124x124
+Movie:ZyablikTheChosen.mkv(100GB);1600х1400;2h30m ";
 
             Parser parser = new Parser();
             parser.AddFileParser(new TextFileParser());

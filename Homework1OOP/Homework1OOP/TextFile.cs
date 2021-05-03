@@ -6,17 +6,12 @@ namespace Homework1OOP
 {
     internal class TextFile : File, IComparable<File>
     {
-        public TextFile()
-        {
-
-        }
-
         public TextFile(string name, string extension, string size, string content) : base(name, extension, size)
         {
             this.Content = content;
         }
 
-        public string Content { get; set; }
+        public string Content { get; private set; }
 
         public override string ToString()
         {

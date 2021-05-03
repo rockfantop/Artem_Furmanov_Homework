@@ -17,7 +17,7 @@ namespace Homework1OOP
             this.Resolution = resolution;
         }
 
-        public string Resolution { get; set; }
+        public string Resolution { get; private set; }
 
         public override string ToString()
         {

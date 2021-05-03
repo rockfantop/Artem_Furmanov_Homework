@@ -43,13 +43,11 @@ namespace Homework1OOP
 
         private string[] ValidateData(string input)
         {
-            string pattern = @"((Text)|(Image)|(Movie)):(.*)" +
-                             @"\.([a-z])+\(\d+(B|MB|GB|TB)\)" +
-                             @"((\;(\d+)x(\d+))|(\;([a-zA-Z]|\ )+)|(\;\d+х\d+\;(\d+(h|m))+))";
+            string pattern = String.Concat(@"((Text)|(Image)|(Movie)):(.*)",
+                @"\.([a-z])+\(\d+(B|MB|GB|TB)\)",
+                @"((\;(\d+)x(\d+))|(\;([a-zA-Z]|\ )+)|(\;\d+х\d+\;(\d+(h|m))+))");
 
-            MatchCollection matches = Regex.Matches(input, pattern);
-
-            return matches.Cast<Match>().Select(match => match.Value).ToArray();
+            return Regex.Matches(input, pattern).Cast<Match>().Select(match => match.Value).ToArray();
         }
     }
 }

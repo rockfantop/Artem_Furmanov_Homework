@@ -17,9 +17,9 @@ namespace Homework1OOP
             this.Duration = duration;
         }
 
-        public string Resolution { get; set; }
+        public string Resolution { get; private set; }
 
-        public string Duration { get; set; }
+        public string Duration { get; private set; }
 
         public override string ToString()
         {

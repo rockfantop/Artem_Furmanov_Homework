@@ -16,12 +16,12 @@ namespace Homework1OOP
             string[] data = Regex.Split(input, pattern);
 
                 ImageFile imageFile = new ImageFile
-                {
-                    Name = data[1],
-                    Extension = data[2],
-                    Size = data[3],
-                    Resolution = data[5]
-                };
+                (
+                    data[1],
+                    data[2],
+                    data[3],
+                    data[5]
+                );
 
                 return imageFile;
         }

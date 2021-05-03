@@ -14,13 +14,17 @@ namespace Homework1OOP
             GB = 3
         }
 
+        private long ByteParser(string value)
+        {
+            return (long)Convert.ToInt32(Regex.Split(value, @"[A-Z]")[0]) * (long)Math.Pow(1024,
+                (int)Enum.Parse(typeof(ByteTypes), Regex.Split(value, @"\d+(.*)$")[1]));
+        }
+
         public int Compare(string first, string second)
         {
-            long firstArgument = (long)Convert.ToInt32(Regex.Split(first, @"[A-Z]")[0]) * (long)Math.Pow(1024,
-                (int)Enum.Parse(typeof(ByteTypes), Regex.Split(first, @"\d+(.*)$")[1]));
+            long firstArgument = ByteParser(first);
 
-            long secondArgument = (long)Convert.ToInt32(Regex.Split(second, @"[A-Z]")[0]) * (long)Math.Pow(1024,
-                (int)Enum.Parse(typeof(ByteTypes), Regex.Split(second, @"\d+(.*)$")[1]));
+            long secondArgument = ByteParser(second);
 
             if (firstArgument > secondArgument)
             {
