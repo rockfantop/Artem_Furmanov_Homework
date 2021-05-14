@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -122,9 +123,54 @@ namespace ClassPractice3
             }
             else
             {
-                Console.WriteLine("Nice code!");
+                Console.WriteLine("Nice number!");
             }
         }
 
+        public void ReplacePhoneNumbers(string input)
+        {
+            string pattern = @"\+380-(\d){2}-(\d){3}-(\d){2}-(\d){2}";
+
+            string format = "+XXX-XX-XXX-XX-XX";
+
+            Console.WriteLine(new Regex(pattern).Replace(input, format));
+        }
+
+        public string[] NamesToUpper(string[] input)
+        {
+            List<string> result = new List<string>();
+
+            foreach(var name in input)
+            {
+                string[] nameList = Regex.Split(name, @"\W");
+
+                string[] spaces = Regex.Matches(name, @"\W").Cast<Match>().Select(match => match.Value).ToArray();
+
+                string resultName = "";
+
+                for (int i = 0; i < nameList.Length; i++)
+                {
+                    nameList[i] = String.Concat(nameList[i][0].ToString().ToUpper(), nameList[i].Substring(1));
+
+                    if (i != nameList.Length - 1)
+                    {
+                        resultName = String.Concat(resultName, nameList[i] + spaces[i]);
+                    }
+                    else
+                    {
+                        resultName = String.Concat(resultName, nameList[i]);
+                    }
+                }
+
+                result.Add(resultName);
+            }
+
+            return result.ToArray();
+        }
+
+        public void DecodeBase64String(string input)
+        {
+            Console.WriteLine(Encoding.UTF8.GetString(Convert.FromBase64String(input)));
+        }
     }
 }
