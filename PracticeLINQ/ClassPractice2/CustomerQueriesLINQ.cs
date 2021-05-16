@@ -5,11 +5,11 @@ using System.Linq;
 
 namespace ClassPractice2
 {
-    class CustomerController
+    class CustomerQueriesLINQ
     {
         private List<Customer> customers;
 
-        public CustomerController(List<Customer> customers)
+        public CustomerQueriesLINQ(List<Customer> customers)
         {
             this.customers = customers;
         }

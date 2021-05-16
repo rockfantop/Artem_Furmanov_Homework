@@ -7,7 +7,7 @@ namespace ClassPractice2
     {
         static void Main(string[] args)
         {
-            CustomerController customerController = new CustomerController(new List<Customer>
+            CustomerQueriesLINQ customerQueriesLINQ = new CustomerQueriesLINQ(new List<Customer>
 {
     new Customer(1, "Tawana Shope", new DateTime(2017, 7, 15), 15.8),
     new Customer(2, "Danny Wemple", new DateTime(2016, 2, 3), 88.54),
@@ -30,9 +30,9 @@ namespace ClassPractice2
     new Customer(19, "Florencio Messenger", new DateTime(2017, 10, 2), 36.8),
     new Customer(20, "Anna Ledesma", new DateTime(2017, 12, 29), 0.8)
 });
-            Console.WriteLine(customerController.GetFirstRegistretedCustomer().RegistrationDate);
+            Console.WriteLine(customerQueriesLINQ.GetFirstRegistretedCustomer().RegistrationDate);
 
-            Console.WriteLine(customerController.CustomersBalanceAverage());
+            Console.WriteLine(customerQueriesLINQ.CustomersBalanceAverage());
 
             //customerController.CustomersFilterByDate(new DateTime(2000, 01, 01), new DateTime(2017, 01, 01));
 
@@ -40,11 +40,11 @@ namespace ClassPractice2
 
             //customerController.CustomersFilterByName("ad");
 
-            customerController.CustomersFilterByMonth();
+            customerQueriesLINQ.CustomersFilterByMonth();
 
             //customerController.CustomersFilterByProperty("RegistrationDate", "ascending");
 
-            customerController.PrintCustomers();
+            customerQueriesLINQ.PrintCustomers();
         }
     }
 }
