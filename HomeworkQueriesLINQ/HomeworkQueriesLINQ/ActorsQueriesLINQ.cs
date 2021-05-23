@@ -63,12 +63,12 @@ namespace HomeworkQueriesLINQ
 
         public void PrintAuthorsOfArticlesAndFilms(List<object> data)
         {
-            data.OfType<Article>()
+            data.OfType<ArtObject>()
                 .Select(x => x.Author).Distinct().ToList()
-                .ForEach(x => { Console.WriteLine($"{x} - {data.OfType<Article>().Count(y => y.Author == x)} articles"); });
-            data.OfType<Film>()
-                .Select(x => x.Author).Distinct().ToList()
-                .ForEach(x => { Console.WriteLine($"{x} - {data.OfType<Film>().Count(y => y.Author == x)} films"); });
+                .ForEach(x => 
+                { 
+                    Console.WriteLine($"{x} - {data.OfType<ArtObject>().Count(y => y.Author == x)} arts"); 
+                });
         }
 
         public void PrintDistinctCharsOfActorsNames(List<object> data)
