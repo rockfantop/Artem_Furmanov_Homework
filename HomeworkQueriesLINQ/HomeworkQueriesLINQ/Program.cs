@@ -8,36 +8,29 @@ namespace HomeworkQueriesLINQ
     {
         static void Main(string[] args)
         {
-            //First Part
-
             var queries = new QuiriesWithDigitsAndStrings();
 
-            //queries.PrintDigits();
+            queries.PrintDigits();
 
-            //queries.PrintDigitsDivisibleBy3();
+            queries.PrintDigitsDivisibleBy3();
 
-            //queries.PrintWord();
+            queries.PrintWord();
 
-            //queries.PrintAllStringsWithA("aaa;abb;ccc;dap");
+            queries.PrintAllStringsWithA("aaa;abb;ccc;dap");
 
-            //queries.PrintAllStringsAndCountOfA("aaa;abb;ccc;dap");
+            queries.PrintAllStringsAndCountOfA("aaa;abb;ccc;dap");
 
-            //queries.IsWordExist("aaa;abb;ccc;dap", "abb");
+            queries.IsWordExist("aaa;abb;ccc;dap", "abb");
 
-            //queries.PrintLongestString("aaa; xabbx; abb; ccc; dap");
+            queries.PrintLongestString("aaa; xabbx; abb; ccc; dap");
 
-            //queries.PrintAverageLenghtOfString("aaa; xabbx; abb; ccc; dap");
+            queries.PrintAverageLenghtOfString("aaa; xabbx; abb; ccc; dap");
 
-            //queries.PrintShortestStringReverse("aaa; xabbx; abb; ccc; dap; zh");
+            queries.PrintShortestStringReverse("aaa; xabbx; abb; ccc; dap; zh");
 
-            //queries.PrintStringsStartsAEndsB("baaa; aabb; aaa; aabbx; abb; ccc; dap; zh");
+            queries.PrintStringsStartsAEndsB("baaa; aabb; aaa; aabbx; abb; ccc; dap; zh");
 
-            //queries.PrintLastInSequence("baaa; aabb; aaa; aabbx; abb; ccc; dap; zh; asdbb; vasdasdbb; bbbbbbb");
-
-            /////
-            ///
-
-            //Second Part
+            queries.PrintLastInSequence("baaa; aabb; aaa; aabbx; abb; ccc; dap; zh; asdbb; vasdasdbb; bbbbbbb");
 
             List<object> data = new List<object> {
                 "Hello",
@@ -66,7 +59,7 @@ namespace HomeworkQueriesLINQ
 
             actorQueries.PrintTwoOldestActors(data);
 
-            //actorQueries.PrintAuthorsActicles(data);
+            actorQueries.PrintAuthorsActicles(data);
 
             actorQueries.PrintAuthorsOfArticlesAndFilms(data);
 
