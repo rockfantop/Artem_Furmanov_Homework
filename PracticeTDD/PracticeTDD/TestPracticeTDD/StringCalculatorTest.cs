@@ -84,7 +84,7 @@ namespace TestPracticeTDD
         {
             var result = this.calculator.GetCalledCount();
 
-            Assert.AreEqual(9, result, $"Wrong count {result}");  
+            Assert.AreEqual(10, result, $"Wrong count {result}");  
         }
 
         [Test]
@@ -110,9 +110,17 @@ namespace TestPracticeTDD
         [Test]
         public void StringCalculator_Add_CustomDelimiterLength()
         {
-            var result = this.calculator.Add("//***\n2***5***3");
+            var result = this.calculator.Add("//[***]\n2***5***3");
 
             Assert.AreEqual(10, result, $"Wrong sum");
+        }
+
+        [Test]
+        public void StringCalculator_Add_CustomDelimiterLengthAndDilimiters()
+        {
+            var result = this.calculator.Add("//[***][%]\n2***5***3%5");
+
+            Assert.AreEqual(15, result, $"Wrong sum");
         }
     }
 }

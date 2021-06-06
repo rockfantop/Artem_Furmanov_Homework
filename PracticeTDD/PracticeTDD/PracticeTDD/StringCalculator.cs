@@ -19,14 +19,37 @@ namespace PracticeTDD
 
             if (!String.IsNullOrEmpty(numbers))
             {
-                if (numbers.Length > 2 && numbers.Substring(0, 2) == "//")
+                string[] digits = null;
+
+                List<string> delimiterList = new List<string>(new string[] { "\n", "//", "]", "[" });
+
+                if (numbers.Length > 2 && numbers.Substring(0, 2) == "//" && numbers[2] == '[')
+                {
+                    var delimiters = numbers.Split(new string[] { "[", "]" }, StringSplitOptions.RemoveEmptyEntries);
+
+                    for (int i = 1; i < delimiters.Length; i++)
+                    {
+                        if (delimiters[i][0] == '\n')
+                        {
+                            break;
+                        }
+                        else
+                        {
+                            delimiterList.Add(delimiters[i]);
+                        }
+                    }
+                }
+                else if (numbers.Length > 2 && numbers.Substring(0, 2) == "//")
                 {
                     this.delimiter = numbers.Split(new string[] { "//", "\n" }, StringSplitOptions.RemoveEmptyEntries)[0];
                 }
 
-                string[] digits = numbers.Split(new string[] { delimiter, "\n", "//" }, StringSplitOptions.RemoveEmptyEntries);
+                delimiterList.Add(this.delimiter);
+
+                digits = numbers.Split(delimiterList.ToArray(), StringSplitOptions.RemoveEmptyEntries);
 
                 string exceptionMassage = "";
+
                 bool isAnyNegative = false;
 
                 foreach (var item in digits)
