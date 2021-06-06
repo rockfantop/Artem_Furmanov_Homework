@@ -169,10 +169,29 @@ SELECT TOP(10) [ProductID], [Name], [ProductNumber], [Weight]
   --Task7
 
   SELECT a.[ProductCategoryID], a.[Name],
-  SUM(c.UnitPrice) AS 'TotalSum'
+  SUM(ISNULL(b.[ListPrice], 0)) AS 'Total Sum'
   FROM [SalesLT].[ProductCategory] a
-  LEFT JOIN [SalesLT].[Product] b
-  ON a.[ProductCategoryID] = b.[ProductCategoryID]
-  JOIN [SalesLT].[SalesOrderDetail] c
-  ON c.ProductID = b.ProductID
+  RIGHT JOIN [SalesLT].[Product] b
+  ON b.[ProductCategoryID] = a.[ProductCategoryID]
+  LEFT JOIN [SalesLT].[SalesOrderDetail] c
+  ON b.[ProductID] = c.[ProductID]
+  WHERE b.[SellEndDate] < GETDATE()
   GROUP BY a.[ProductCategoryID], a.[Name];
+
+  SELECT a.[CustomerID], a.[FirstName], c.[UnitPriceDiscount] as 'Discount'
+  FROM [SalesLT].[Customer] a
+  JOIN [SalesLT].[SalesOrderHeader] b
+  ON a.CustomerID = b.CustomerID
+  JOIN [SalesLT].[SalesOrderDetail] c
+  ON b.SalesOrderID = c.SalesOrderID
+  GROUP BY a.[CustomerID], a.[FirstName], c.[UnitPriceDiscount]
+  HAVING MAX(c.[UnitPriceDiscount]) >= 0.4
+
+  SELECT a.[CustomerID], a.[FirstName], a.[LastName]
+  FROM [SalesLT].[Customer] a
+  JOIN [SalesLT].[SalesOrderHeader] b
+  ON a.CustomerID = b.CustomerID
+  JOIN [SalesLT].[SalesOrderDetail] c
+  ON b.SalesOrderID = c.SalesOrderID
+  GROUP BY a.[CustomerID], a.[FirstName], a.[LastName]
+  HAVING SUM(c.[UnitPrice]) > 15000
