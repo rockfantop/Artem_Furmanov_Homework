@@ -1,0 +1,147 @@
+.table, td, th{
+    border: 1px solid black;
+    border-collapse: collapse;
+    font-weight: bold;
+}
+
+.h1special {
+    text-align: right;
+    color: red;
+}
+
+.h2special  {
+    color: green;
+}
+
+.span1special  {
+    color: red;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.span2special  {
+    color: blue;
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.span3special  {
+    color: red;
+    font-size: 14px;
+}
+
+.textBlock  {
+    color: purple;
+    font-style: italic;
+}
+
+.textBox    {
+    text-align: justify;
+    width: 600px;
+}
+
+.tracery    {
+    background-image: url("../IMG/узор.PNG");
+    background-position: top right;
+    background-repeat: repeat-y;
+}
+
+.monkey1    {
+    float: left;
+    margin: 0 10px 10px 10px;
+}
+
+.monkey2    {
+    float: right;
+    margin: 10px 0 10px 10px;
+}
+
+.inlineMenu     {
+    background-color: orange;
+    color: white;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 40px;
+}
+
+.inlineElement    {
+    display: inline;
+    font-size: 20px;
+    margin-left: 40px;
+    vertical-align: middle;
+}
+
+.blockMenu      {
+    color: white;
+    font-weight: bold;
+}
+
+.blockElement       {
+    width: 200px;
+    background-color: darkgrey;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 10px;
+    margin-top: 3px;
+    border: 1px solid black;
+    height: 35px;
+}
+
+#inlineMenu1    {
+    font-weight: bold;
+    background-color: darkslategrey;
+}
+
+.bigBlock   {
+    border: 1px solid black;
+    text-align: justify;
+    width: 600px;
+    display: flex;
+    flex-direction: column;
+    padding: 0 10px 10px 10px;
+    margin: 100px auto;
+}
+
+.innerHeader    {
+    text-align: center;
+}
+
+.trafficLight   {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin: 100px auto;
+    height: 500px;
+    width: 250px;
+}
+
+.redLight   {
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: red;
+}
+
+.yellowLight    {
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: yellow;
+    margin-top: -5px;
+}
+
+.greenLight     {
+    border: 1px solid black;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+    background-color: green;
+    margin-top: -5px;
+}
